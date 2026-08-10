@@ -400,62 +400,11 @@ a {
   border-radius: 999px;
 }
 
-/* ---------------- 成本亮点 ---------------- */
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-bottom: 52px;
-}
-
-.stat {
-  text-align: center;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 36px 24px;
-  box-shadow: var(--shadow-md);
-}
-
-.stat-value {
-  font-size: 46px;
-  font-weight: 800;
-  letter-spacing: -1px;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  line-height: 1.1;
-  margin-bottom: 8px;
-}
-
-.stat-symbol {
-  font-size: 26px;
-  font-weight: 700;
-  margin-right: 2px;
-}
-
-.stat-unit {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.stat-label {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.stat-note {
-  font-size: 13px;
-  color: var(--text-muted);
-}
+/* ---------------- 为什么选择 Lead Radar ---------------- */
 
 .highlights-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 22px;
 }
 
@@ -827,7 +776,6 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .stats,
   .highlights-grid {
     grid-template-columns: 1fr;
   }
