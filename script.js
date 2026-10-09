@@ -31,6 +31,35 @@ if (header) {
   onScroll();
 }
 
+// 复制微信号（优先 clipboard API，失败时退回 execCommand）
+const copyBtn = document.getElementById("copyWechat");
+const wechatId = document.getElementById("wechatId");
+
+if (copyBtn && wechatId) {
+  const resetLabel = () => {
+    copyBtn.textContent = "复制微信号";
+  };
+
+  copyBtn.addEventListener("click", async () => {
+    const text = wechatId.textContent.trim();
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (e) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      ta.remove();
+    }
+    copyBtn.textContent = "已复制，去微信粘贴";
+    setTimeout(resetLabel, 2000);
+  });
+}
+
 // FAQ：同一时间只展开一个（details 互斥，提升浏览体验）
 const faqItems = document.querySelectorAll(".faq-item");
 faqItems.forEach((item) => {
